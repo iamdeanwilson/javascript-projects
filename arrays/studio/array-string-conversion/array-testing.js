@@ -20,7 +20,6 @@ console.log(protoArray4.includes(';')); // false
 console.log(protoArray4.includes(' ')); // true
 */
 
-
 //2) 
 function reverseCommas() {
 	//TODO: 1. create and instantiate your variables.
@@ -28,17 +27,20 @@ function reverseCommas() {
 	let output;
 	//TODO: 2. write the code required for this step
 
-	let array1 = protoArray1.split(',');
+	let array1 = strings[0].split(',');
 
 	array1.reverse();
 
-	let newProtoArray1 = array1.join(',');
+	console.log(array1);
 
-	console.log(newProtoArray1)
+	strings[0] = array1.join(',');
 
+	console.log(strings[0]);
+
+	output = (strings[0]);
 
 	//NOTE: For the code to run properly, you must return your output.  this needs to be the final line of code within the function's { }.
-	return output;
+	return output; 
 }
 
 //3)
@@ -47,15 +49,15 @@ function semiDash() {
 	let output;
 //TODO: write the code required for this step
 
-	let array2 = protoArray2.split(';');
+	let array2 = strings[1].split(';');
 
-	array2.reverse();
+	array2.sort();
 
-	let newProtoArray2 = [];
-
-	newProtoArray2 = array2.join('-');
+	strings[1] = array2.join('-');
   
-	console.log(newProtoArray2);
+	console.log(strings[1]);
+
+	output = (strings[1]);
 
 	return output;
 }
@@ -66,15 +68,15 @@ function reverseSpaces() {
 	let output;
   //TODO: write the code required for this step
 
-	let array3 = protoArray3.split(';');
+	let array3 = strings[2].split(' ');
   
-	array3.reverse();
+	array3.sort().reverse();
   
-	let newProtoArray3 = [];
+	strings[2] = array3.join(" ");
 
-	newProtoArray3 = array3.join(" ");
+	console.log(strings[2]);
 
-	console.log(newProtoArray3);
+	output = (strings[2]);
 
 	return output;
 }
@@ -85,23 +87,19 @@ function commaSpace() {
 	let output;
 	//TODO: write the code required for this step
   
-	let array4 = protoArray4.split(', ');
+	let array4 = strings[3].split(', ');
 	
 	array4.reverse();
 	
-	let newProtoArray4 = [];
-
-	newProtoArray4 = array4.join(", ");
+	strings[3] = array4.join(",");
 	
-	console.log(newProtoArray4)
+	console.log(strings[3]);
+
+	output = (strings[3]);
 
 	return output;
 }
 
-reverseCommas();
-semiDash();
-reverseSpaces();
-commaSpace();
 // NOTE: Don't add or modify any code below this line or your program might not run as expected.
 module.exports = {
 	strings : strings, 
