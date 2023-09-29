@@ -18,12 +18,38 @@ function findMinValue(arr){
 5) Return the new sorted array.
 6) Be sure to print the results in order to verify your code.*/
 
-//Your function here...
+let newArr = [];
+
+// function sortArr(arr){
+//   let sortedArr = []
+//   for (let i = 0 ; arr.length > 0 ; i++ ){
+//     sortedArr.push(findMinValue(arr));
+//     arr.splice(arr.indexOf(findMinValue(arr)), 1);
+//   }
+//   return sortedArr;
+// }
+
+// //Sample arrays for testing:
+// let nums1 = [5, 10, 2, 42];
+// let nums2 = [-2, 0, -10, -44, 5, 3, 0, 3];
+// let nums3 = [200, 5, 4, 10, 8, 5, -3.3, 4.4, 0];
+
+// console.log(sortArr(nums2));
 
 /* BONUS MISSION: Refactor your sorting function to use recursion below:
  */
+
+function sortArr (arr){
+  if (arr.length <= 0){
+      return newArr;
+  } else newArr.push(findMinValue(arr));
+  arr.splice(arr.indexOf(findMinValue(arr)), 1);
+  return sortArr (arr);
+}
 
 //Sample arrays for testing:
 let nums1 = [5, 10, 2, 42];
 let nums2 = [-2, 0, -10, -44, 5, 3, 0, 3];
 let nums3 = [200, 5, 4, 10, 8, 5, -3.3, 4.4, 0];
+
+console.log(sortArr(nums3));

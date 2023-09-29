@@ -7,4 +7,16 @@ let nums3 = [200, 5, 4, 10, 8, 5, -3.3, 4.4, 0];
 
 //Using one of the test arrays as the argument, call your function inside the console.log statement below.
 
-console.log(/* your code here */);
+function returnMinimumValue(minVal){
+    while(minVal.length > 1){
+          if (minVal[0] < minVal[1]){
+              minVal.splice(1,1);
+          } else if (minVal[0] >= minVal[1]){
+              minVal.splice(0,1);
+          }
+      }   
+      return minVal
+  }
+  
+  
+  console.log(returnMinimumValue(nums3));
