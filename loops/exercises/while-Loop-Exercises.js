@@ -22,7 +22,7 @@ let altitudeKm = 0;
 astronautCount = input.question("Please enter the number of astronauts on board: ");
 astronautCount = Number(astronautCount);
 
-while(astronautCount > 7 || astronautCount < 1){
+while(astronautCount > 7 || astronautCount < 1 || isNaN(astronautCount)){
   astronautCount = input.question("Invalid Entry. Must be between 1 and 7 astronauts. Please enter again: ");
   astronautCount = Number(astronautCount);
 }

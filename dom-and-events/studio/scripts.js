@@ -37,11 +37,11 @@ takeoff.addEventListener('click', event => {
  });
 
  right.addEventListener('click', event => {
-    rocket.style.position.right =  (rocket.style.position.right - parseInt('10px'));
+    rocket.style.position =  (rocket.style.position.right + parseInt('10px'));
  });
 
  left.addEventListener('click', event => {
-    rocket.style.position.left =  (rocket.style.position.left - parseInt('10px'));
+    rocket.style.position =  (rocket.style.position.left - parseInt('10px'));
  });
 
 });

@@ -1,3 +1,9 @@
+//Sample arrays for testing:
+let nums1 = [5, 10, 2, 42];
+let nums2 = [-2, 0, -10, -44, 5, 3, 0, 3];
+let nums3 = [200, 5, 4, 10, 8, 5, -3.3, 4.4, 0];
+
+
 function findMinValue(arr){
   let min = arr[0];
   for (i = 0; i < arr.length; i++){
@@ -20,24 +26,18 @@ function findMinValue(arr){
 
 let newArr = [];
 
-// function sortArr(arr){
-//   let sortedArr = []
-//   for (let i = 0 ; arr.length > 0 ; i++ ){
-//     sortedArr.push(findMinValue(arr));
-//     arr.splice(arr.indexOf(findMinValue(arr)), 1);
-//   }
-//   return sortedArr;
-// }
+function sortArr(arr){
+  let sortedArr = []
+  for (let i = 0 ; arr.length > 0 ; i++ ){
+    sortedArr.push(findMinValue(arr));
+    arr.splice(arr.indexOf(findMinValue(arr)), 1);
+  }
+  return sortedArr;
+}
 
-// //Sample arrays for testing:
-// let nums1 = [5, 10, 2, 42];
-// let nums2 = [-2, 0, -10, -44, 5, 3, 0, 3];
-// let nums3 = [200, 5, 4, 10, 8, 5, -3.3, 4.4, 0];
+console.log(sortArr(nums3));
 
-// console.log(sortArr(nums2));
-
-/* BONUS MISSION: Refactor your sorting function to use recursion below:
- */
+// BONUS MISSION: Refactor your sorting function to use recursion below:
 
 function sortArr (arr){
   if (arr.length <= 0){
@@ -46,10 +46,5 @@ function sortArr (arr){
   arr.splice(arr.indexOf(findMinValue(arr)), 1);
   return sortArr (arr);
 }
-
-//Sample arrays for testing:
-let nums1 = [5, 10, 2, 42];
-let nums2 = [-2, 0, -10, -44, 5, 3, 0, 3];
-let nums3 = [200, 5, 4, 10, 8, 5, -3.3, 4.4, 0];
 
 console.log(sortArr(nums3));

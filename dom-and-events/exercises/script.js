@@ -4,21 +4,21 @@ function init () {
     const paragraph = document.getElementById("statusReport");
 
     // Put your code for the exercises here.
-    liftoffButton.addEventListener('click', event => {
-        statusReport.innerHTML = 'Houston! We have liftoff!';
+    button.addEventListener('click', event => {
+        paragraph.innerHTML = 'Houston! We have liftoff!';
      });
 
-    abortMission.addEventListener('mouseover', event => {
+     missionAbort.addEventListener('mouseover', event => {
         event.target.style.background = "red";
     });
-    abortMission.addEventListener('mouseout', event => {
+    missionAbort.addEventListener('mouseout', event => {
         event.target.style.background = "";
     });            
 
-    abortMission.addEventListener('click', function {
+    missionAbort.addEventListener('click', function {
         let answer = window.confirm("Are you sure you want to abort the mission?");
         if (answer === true){
-            statusReport.innerHTML = 'Mission aborted! Space shuttle returning home';
+            paragraph.innerHTML = 'Mission aborted! Space shuttle returning home';
         }
     });
 
