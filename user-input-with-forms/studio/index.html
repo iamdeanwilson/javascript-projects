@@ -4,8 +4,32 @@
 	<meta charset="utf-8">
 	<script>
 		// TODO: create a handler
+		function setSearchEngine(event){
+			//alert("Button Pressed!");
+			let searchText = document.querySelector("input[name=q]");
+			let selection = document.querySelector("input[name=engine]:checked");
+			let actions = {
+				"google": "https://www.google.com/search",
+				"duckDuckGo": "https://duckduckgo.com/",
+				"bing": "https://www.bing.com/search",
+				"ask": "https://www.ask.com/web"
+			};
+			if (searchText.value === ''){
+				alert("Search Text Required!");
+				event.preventDefault();
+			}
+			if (selection == undefined){
+				alert("Search Engine Selection Required!");
+				event.preventDefault();
+			}
+			document.querySelector("form").action = actions[selection.value]
+		}
     window.addEventListener("load", function(){
         // TODO: register the handler
+		let form = document.querySelector("form");
+        form.addEventListener("submit", function(event) {
+            setSearchEngine();
+        });
     });
 	</script>
 </head>
@@ -14,6 +38,12 @@
 
 	<form id="searchForm">
     <!-- TODO: add form elements -->
+		<input type="text" name="q"/>
+		<label><input type="radio" name="engine" value="google"/>Google</label>
+		<label><input type="radio" name="engine" value="duckDuckGo"/>DuckDuckGo</label>
+		<label><input type="radio" name="engine" value="bing"/>Bing</label>
+		<label><input type="radio" name="engine" value="ask"/>Ask</label>
+		<button>Go!</button>
 	</form>
 
 </body>
